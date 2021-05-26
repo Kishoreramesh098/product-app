@@ -24,6 +24,8 @@ public interface ProductDAO {
 	List<String> findAllName();
 	
 	Product findByDate(LocalDate expiryDate);
+
+	void delete_name(String name);
 	
 
 

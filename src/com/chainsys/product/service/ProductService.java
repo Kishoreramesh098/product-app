@@ -24,6 +24,8 @@ public interface ProductService {
 	List<String> findAllName();
 	
 	Product findByDate(LocalDate expiryDate) throws ProductNotFoundException;
+
+	void delete_name(String name) throws ProductNotFoundException;
 	
 
 }

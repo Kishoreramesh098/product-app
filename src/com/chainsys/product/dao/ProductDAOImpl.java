@@ -171,6 +171,16 @@ public class ProductDAOImpl implements ProductDAO {
 
 		return product;
 	}
+	@Override
+	public void delete_name(String name) {
+		try {
+			pstmt = con.prepareStatement("delete product_2605 where name=?");
+			pstmt.setString(1, name);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	}
 	
 
