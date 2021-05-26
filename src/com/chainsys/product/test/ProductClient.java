@@ -13,7 +13,7 @@ import com.chainsys.product.service.ProductService;
 import com.chainsys.product.service.ProductServiceImpl;
 
 public class ProductClient {
-	public static void main(String[] args) throws Exception{
+	public static void main(String[] args){
 
 		Set<Product> productSet;
 		ProductService service = new ProductServiceImpl();
@@ -82,33 +82,18 @@ public class ProductClient {
 			}
 			break;
 			//Update the Product Expiry Date Based on the Id 
-//		case 7:
-//			String date = scanner.next();
-//
-//			SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
-//			Date date2=null;
-//			try {
-//			    //Parsing the String
-//			    date2 = dateFormat.parse(date);
-//			} catch (ParseException e) {
-//			    // TODO Auto-generated catch block
-//			    e.printStackTrace();
-//			}
-//			System.out.println(date2);
-//			  System.out.println("Enter the Product Id");
-//			  id = scanner.nextInt();
-//			  System.out.println(date1);
-////			Product updateProductExp = new Product(2, "Pencil", LocalDate.parse(date, dateFormat));
-////			try {
-////				service.update(updateProduct);
-////				productSet = service.findAll();
-////				System.out.println(productSet);
-////			} catch (ProductNotFoundException e) {
-////
-////			}
-//			break;	
-			
-		default:
+		case 7:
+			System.out.println("Update the Product Expiry date Based on the Id");
+			date = "06/05/2021";
+			dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+			updateProduct = new Product(4, "Pencil", LocalDate.parse(date, dateFormat));
+			try {
+				service.update_expire(updateProduct);
+				productSet = service.findAll();
+				System.out.println(productSet);
+			} catch (ProductNotFoundException e) {
+
+			}
 			break;
 		}
 		scanner.close();
