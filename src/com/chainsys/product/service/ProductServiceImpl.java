@@ -1,5 +1,6 @@
 package com.chainsys.product.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -79,6 +80,16 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<String> findAllName() {
 		return dao.findAllName();
+	}
+	@Override
+	public Product findByDate(LocalDate expiryDate) throws ProductNotFoundException {
+		Product Product = dao.findByDate( expiryDate);
+		if (Product == null) {
+			throw new ProductNotFoundException("Product  Not Found");
+		} else {
+			return Product;
+		}
+
 	}
 
 }

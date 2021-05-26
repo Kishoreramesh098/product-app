@@ -1,5 +1,6 @@
 package com.chainsys.product.dao;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -21,5 +22,9 @@ public interface ProductDAO {
 	void update_expire(Product product);
 	
 	List<String> findAllName();
+	
+	Product findByDate(LocalDate expiryDate);
+	
+
 
 }

@@ -155,6 +155,22 @@ public class ProductDAOImpl implements ProductDAO {
 		}
 		return nameList;
 	}
+	@Override
+	public Product findByDate(LocalDate expiryDate) {
+		Product product = null;
+		try {
+			pstmt = con.prepareStatement("select * from product_2605 where expiry_date=?");
+			pstmt.setDate(1, Date.valueOf(expiryDate));
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				product = new Product(rs.getInt("id"), rs.getString("name"), rs.getDate("expiry_date").toLocalDate());
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return product;
+	}
+	}
 	
 
-}

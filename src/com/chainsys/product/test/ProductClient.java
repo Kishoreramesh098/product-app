@@ -100,8 +100,19 @@ public class ProductClient {
 			nameList = service.findAllName();
 			System.out.println(nameList);
 			break;	
-		}
-		scanner.close();
+		case 9:
+			System.out.println("Find the Product By date");
+			
+			try {
+			 	date = "01/01/2023";
+				dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+				Product product=service.findByDate(LocalDate.parse(date,dateFormat));
+
+				System.out.println(product);
+			} catch (ProductNotFoundException e) {
+			}
+			break;
 	}
 
+}
 }
