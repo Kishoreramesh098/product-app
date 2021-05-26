@@ -109,5 +109,9 @@ public class ProductServiceImpl implements ProductService {
 			dao.delete_id(id);
 		}
 	}
+	@Override
+	public List<Integer> findAllId() throws ProductNotFoundException{
+		return dao.findAllId();
+	}
 
 }

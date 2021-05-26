@@ -23,6 +23,7 @@ public class ProductClient {
 		Scanner scanner = new Scanner(System.in);
 		int choice = scanner.nextInt();
 		List<String> nameList;
+		List<Integer> idList;
 		switch (choice) {
 		case 1:
 			System.out.println("Find All Products");
@@ -131,8 +132,19 @@ public class ProductClient {
 				System.out.println(productSet);
 			} catch (ProductNotFoundException e) {
 			}	
-		
-			break;
+		break;
+		case 12:
+			System.out.println("Display id of all product");
+			System.out.println("Enter the Product id");
+			try {
+				idList = service.findAllId();
+				System.out.println(idList);
+			} catch (ProductNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			break;	
 	}
 
 }

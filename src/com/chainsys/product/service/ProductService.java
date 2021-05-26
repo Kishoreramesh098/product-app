@@ -28,6 +28,8 @@ public interface ProductService {
 	void delete_name(String name) throws ProductNotFoundException;
 
 	 void delete_id(int id) throws ProductNotFoundException;
+
+	List<Integer> findAllId() throws ProductNotFoundException;
 	
 
 }

@@ -28,6 +28,8 @@ public interface ProductDAO {
 	void delete_name(String name);
 
 	void delete_id(int id);
+
+	List<Integer> findAllId();
 	
 
 
