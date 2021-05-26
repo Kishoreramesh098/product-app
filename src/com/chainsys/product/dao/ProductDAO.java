@@ -1,5 +1,6 @@
 package com.chainsys.product.dao;
 
+import java.util.List;
 import java.util.Set;
 
 import com.chainsys.product.model.Product;
@@ -18,5 +19,7 @@ public interface ProductDAO {
 	Product findByName(String name);
 	
 	void update_expire(Product product);
+	
+	List<String> findAllName();
 
 }

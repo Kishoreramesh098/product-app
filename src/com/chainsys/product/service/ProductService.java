@@ -1,5 +1,6 @@
 package com.chainsys.product.service;
 
+import java.util.List;
 import java.util.Set;
 
 import com.chainsys.product.exception.ProductNotFoundException;
@@ -18,5 +19,8 @@ public interface ProductService {
 	void delete(int id) throws ProductNotFoundException;
 
 	void update_expire(Product updateProduct) throws ProductNotFoundException;
+
+	List<String> findAllName();
+	
 
 }

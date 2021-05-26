@@ -6,7 +6,20 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Set;
+import java.util.List;
+import com.chainsys.product.model.Product;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.chainsys.product.model.Product;
@@ -117,7 +130,7 @@ public class ProductDAOImpl implements ProductDAO {
 	@Override
 	public void update_expire(Product product) {
 		try {
-			pstmt = con.prepareStatement("update product_2611 set expiry_date=? where id=?");
+			pstmt = con.prepareStatement("update product_2605 set expiry_date=? where id=?");
 			pstmt.setDate(1, Date.valueOf(product.getExpiryDate()));
 			pstmt.setInt(2, product.getId());
 			pstmt.executeUpdate();
@@ -125,6 +138,22 @@ public class ProductDAOImpl implements ProductDAO {
 			e.printStackTrace();
 		}
 
+	}
+	
+	@Override
+	public List<String> findAllName() {
+		ArrayList nameList = null;
+		try {
+			pstmt = con.prepareStatement("select Name from product_2605");
+			rs = pstmt.executeQuery();
+			nameList = new ArrayList<>();
+			while (rs.next()) {
+				nameList.add(rs.getString("name"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return nameList;
 	}
 	
 

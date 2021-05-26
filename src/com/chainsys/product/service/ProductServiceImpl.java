@@ -1,5 +1,6 @@
 package com.chainsys.product.service;
 
+import java.util.List;
 import java.util.Set;
 
 import com.chainsys.product.dao.ProductDAO;
@@ -74,6 +75,10 @@ public class ProductServiceImpl implements ProductService {
 			dao.update_expire(Product);
 		}
 
+	}
+	@Override
+	public List<String> findAllName() {
+		return dao.findAllName();
 	}
 
 }

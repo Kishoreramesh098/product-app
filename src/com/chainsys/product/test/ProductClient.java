@@ -1,9 +1,8 @@
 package com.chainsys.product.test;
+import java.time.*;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -23,6 +22,7 @@ public class ProductClient {
 		System.out.println("Enter the choice");
 		Scanner scanner = new Scanner(System.in);
 		int choice = scanner.nextInt();
+		List<String> nameList;
 		switch (choice) {
 		case 1:
 			System.out.println("Find All Products");
@@ -95,6 +95,11 @@ public class ProductClient {
 
 			}
 			break;
+		case 8:
+			System.out.println("Display Name of All Products");
+			nameList = service.findAllName();
+			System.out.println(nameList);
+			break;	
 		}
 		scanner.close();
 	}
