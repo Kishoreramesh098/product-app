@@ -26,6 +26,8 @@ public interface ProductService {
 	Product findByDate(LocalDate expiryDate) throws ProductNotFoundException;
 
 	void delete_name(String name) throws ProductNotFoundException;
+
+	 void delete_id(int id) throws ProductNotFoundException;
 	
 
 }

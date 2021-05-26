@@ -121,6 +121,16 @@ public class ProductClient {
 				System.out.println(productSet);
 			} catch (ProductNotFoundException e) {
 			}
+		case 11:
+			System.out.println("Deleting a Product By id");
+			System.out.println("Enter the Product id");
+			id = scanner.nextInt();
+			try {
+				service.delete_id(id);
+				productSet = service.findAll();
+				System.out.println(productSet);
+			} catch (ProductNotFoundException e) {
+			}	
 		
 			break;
 	}

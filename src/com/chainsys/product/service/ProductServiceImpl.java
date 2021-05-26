@@ -100,5 +100,14 @@ public class ProductServiceImpl implements ProductService {
 			dao.delete_name(name);
 		}
 	}
+	@Override
+	public void delete_id(int id) throws ProductNotFoundException{
+		Product Product = dao.findById(id);
+		if (Product == null) {
+			throw new ProductNotFoundException("Product doesn't exist!!");
+		} else {
+			dao.delete_id(id);
+		}
+	}
 
 }

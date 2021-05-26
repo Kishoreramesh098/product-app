@@ -181,6 +181,16 @@ public class ProductDAOImpl implements ProductDAO {
 			e.printStackTrace();
 		}
 	}
+	@Override
+	public void delete_id(int id) {
+		try {
+			pstmt = con.prepareStatement("delete product_2605 where id=?");
+			pstmt.setInt(1, id);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	}
 	
 
